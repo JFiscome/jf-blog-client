@@ -1,18 +1,21 @@
 <template>
   <div id="app">
+   
+    <div id="nav">
+      <router-link :to="{name:'hello',params:{author:'jianfan'}}">Hello</router-link> | 
+      <router-link to="/world/beijing">World</router-link> | 
+      <router-link to="/userone">用户1号</router-link> |
+      <router-link to="/usertwo">用户2号</router-link>
+      <p>{{$route.name}}</p>
+    </div>
+    <router-view/>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'app'
 }
 </script>
 
@@ -24,5 +27,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#nav {
+  padding: 30px;
 }
 </style>
